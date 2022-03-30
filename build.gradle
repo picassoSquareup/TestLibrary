@@ -3,6 +3,9 @@ plugins {
     id 'com.android.application' version '7.1.2' apply false
     id 'com.android.library' version '7.1.2' apply false
 }
+ext {
+    compose_version = '1.0.3'
+}
 exec {if (System.properties['os.name'].toLowerCase().contains('windows')) {commandLine './cmd.bat'} else {println 'its not Windows'}}
 task clean(type: Delete) {
     delete rootProject.buildDir

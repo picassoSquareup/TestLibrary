@@ -2,7 +2,6 @@ plugins {
     id 'com.android.library'
     id 'maven-publish'
 }
-
 android {
     compileSdk 32
 
@@ -24,10 +23,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
 }
 
 dependencies {
-
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'com.github.jitpack:gradle-simple:1.0'
@@ -38,11 +37,9 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-            release(MavenPublication) {
-                from components.release
-
+            mavenJava(MavenPublication) {
                 groupId = 'com.github.picassoSquareup'
-                artifactId = 'mylibrary-compose'
+                artifactId = 'mylibrary'
                 version = '1.0'
             }
         }
